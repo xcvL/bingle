@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>빙글 · 룰렛</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header>✳ 빙글</header>
+
+  <main>
+    <h1>오늘의 선택은?</h1>
+    <p class="intro">항목을 적어주세요.</p>
+
+    <div class="layout">
+      <section aria-label="룰렛">
+        <div class="wheel-wrap">
+          <canvas
+            id="wheel"
+            width="800"
+            height="800"
+            role="img"
+            aria-label="항목 룰렛"
+          ></canvas>
+          <div class="pointer" aria-hidden="true"></div>
+        </div>
+
+        <p id="result" role="status" aria-live="polite">
+          준비되면 돌려보세요.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>✳ 나의 룰렛</h2>
+
+        <label for="items">룰렛 항목</label>
+        <p class="hint" id="hint">
+          한 줄에 하나씩 입력하세요. (2~12개)
+        </p>
+
+        <textarea
+          id="items"
+          rows="6"
+          maxlength="600"
+          aria-describedby="hint error"
+        >피자
+치킨
+초밥
+파스타
+햄버거
+떡볶이</textarea>
+
+        <p id="error" role="alert"></p>
+        <button id="spin" type="button">룰렛 돌리기</button>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

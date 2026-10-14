@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f5ef;
+  color: #23473b;
+  font-family: system-ui, sans-serif;
+}
+
+header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #dde1d5;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 24px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 5vw, 44px);
+  letter-spacing: -2px;
+}
+
+.intro {
+  color: #7b877a;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 48px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.wheel-wrap {
+  position: relative;
+  max-width: 480px;
+  margin: auto;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 10px solid white;
+  border-radius: 50%;
+  box-shadow: 0 14px 35px #23473b15;
+}
+
+.pointer {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 34px solid #23473b;
+}
+
+.panel {
+  padding: 26px;
+  background: #fffefa;
+  border: 1px solid #e1e5d9;
+  border-radius: 18px;
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: 18px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hint {
+  font-size: 12px;
+  color: #83907d;
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 12px;
+  resize: vertical;
+  border: 1px solid #dce2d3;
+  border-radius: 10px;
+  background: #f6f7f1;
+  color: inherit;
+  font: inherit;
+  line-height: 1.8;
+}
+
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #92b77e;
+  outline-offset: 3px;
+}
+
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #23473b;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: none;
+}
+
+button.holding {
+  background: #416953;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+#error {
+  min-height: 18px;
+  color: #b34435;
+  font-size: 12px;
+}
+
+#result {
+  min-height: 32px;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .wheel-wrap {
+    max-width: 380px;
+  }
+
+  header {
+    padding: 20px 24px;
+  }
+}
